@@ -83,5 +83,14 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = "/sslcert", method = RequestMethod.GET)
+    public String skipSSLCert() {
+
+        String url = "https://node-01.hadoop-video.data.sensetime.com:50470/webhdfs/v1/user/hatieda?op=getcontentsummary";
+
+        String result = restTemplate.getForObject(url, String.class);
+
+        return result;
+    }
 
 }
